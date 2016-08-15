@@ -1,0 +1,15 @@
+<h1>Wordgame#game</h1>
+<p>Find me in app/views/wordgame/game.html.erb</p>
+
+<h2> <% @grid.each do |g| %>
+<%= g %>
+<% end %>
+
+</h2>
+
+<form action="/score" method="get">
+  <label for="question">write your guess</label>
+  <input type="hidden" value="<%= @grid.join %>" name="grid">
+  <input type="text" id="question" name="guess" placeholder="longest word">
+  <input type="submit" value="Go on!">
+</form>
